@@ -1,0 +1,391 @@
+/* ===========================
+   ROOT COLORS & FONTS
+=========================== */
+:root {
+  --primary: #2ea494;
+  --primary-dark: #248f83;
+  --secondary: #ffb400;
+  --ink: #0b3a66;
+  --muted: #6c757d;
+  --bg-light: #f8f9fa;
+  --card-bg: #ffffff;
+  --shadow: rgba(0,0,0,0.08);
+  --border-radius: 14px;
+  --transition: 0.3s ease;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+/* ===========================
+   HEADER & NAVBAR
+=========================== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-text {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #111;
+  transition: var(--transition);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.nav-link:hover {
+  background-color: rgba(46,164,148,0.1);
+  color: var(--primary);
+}
+
+.btn.signup {
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 30px;
+  transition: all 0.2s ease;
+}
+
+.btn.signup:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(46,164,148,0.2);
+}
+
+.btn.signout{
+    padding:9px 16px;
+    color:#fff;
+    font-weight:600;
+    border-radius:6px;
+    transition:0.15s ease;
+}
+
+/* ===========================
+   SERVICE DETAIL CONTAINER
+=========================== */
+#serviceDetail {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  box-shadow: 0 15px 40px var(--shadow);
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.back-btn a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.back-btn a:hover {
+  color: var(--primary);
+}
+
+/* Service Title & Category */
+.service-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.category-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.service-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+}
+
+/* Service Info & Vendor */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.info-value {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.badge-item {
+  display: inline-block;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 50px;
+  margin: 2px 3px 2px 0;
+  font-size: 0.75rem;
+}
+
+/* Price Box */
+.price-box {
+  background: #fff9f1;
+  padding: 1.8rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.price-box h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1.2rem;
+}
+
+.btn-book {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 30px;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.btn-book:hover {
+  background: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+/* Vendor Box */
+.detail-card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.detail-card h5 {
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+/* ===========================
+   REVIEW SECTION
+=========================== */
+.review-section {
+  margin-top: 2.5rem;
+}
+
+.review-card {
+  background: #fff;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.05);
+}
+
+.review-card h6 {
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.review-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* ===========================
+   BOOKING MODAL
+=========================== */
+.modal-content {
+  border-radius: var(--border-radius);
+  padding: 1.2rem;
+}
+
+.modal-header {
+  border-bottom: none;
+  font-weight: 700;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+/* Form Inputs */
+.form-control, .form-select, textarea {
+  border-radius: 8px;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  transition: var(--transition);
+}
+
+.form-control:focus, .form-select:focus, textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(46,164,148,0.1);
+}
+
+/* Submit Button */
+#bookingForm button[type="submit"] {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+#bookingForm button[type="submit"]:hover {
+  background: var(--primary-dark);
+  transform: scale(1.03);
+}
+
+/* Footer */
+.site-footer {
+  background: #fbf7f4; /* light beige */
+  border-top: 1px solid rgba(11,58,102,0.04);
+}
+.site-footer .content-inner { max-width: 1100px; padding-left: 0.5rem; padding-right: 0.5rem; }
+
+.site-footer h5 { color: var(--ink); font-size: 1rem; }
+.footer-links a {
+  color: #495057;
+  text-decoration: none;
+  display: inline-block;
+  padding: 6px 0;
+}
+.footer-links a:hover { color: var(--ink); text-decoration: underline; }
+
+.contact-list li { color: #495057; display: flex; align-items: center; }
+.contact-list i { color: var(--muted); font-size: 1.05rem; }
+
+/* hr */
+.site-footer hr {
+  border: 0;
+  border-top: 1px solid rgba(11,58,102,0.05);
+}
+
+/* Center Quick Links and Contact Info in footer */
+.site-footer .content-inner .row {
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.site-footer .content-inner .col-12.col-md-6 {
+  max-width: 420px;
+  flex: 0 0 auto;
+}
+
+/* Center lists inside each column */
+.site-footer .footer-links,
+.site-footer .contact-list {
+  margin: 0 auto;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Ensure contact list items center their inline icon + text */
+.site-footer .contact-list li {
+  justify-content: center;
+}
+
+/* Small screens: keep stacked and centered */
+@media (max-width: 767.98px) {
+  .site-footer .content-inner .col-12.col-md-6 {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+  .site-footer .footer-links,
+  .site-footer .contact-list {
+    display: block;
+    text-align: center;
+  }
+}
+/* Small screens (<768px) */
+@media (max-width: 767.98px) {
+    /* Stack all nav items vertically */
+    nav.container-fluid {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    /* Center links become full width, centered text */
+    .nav-center {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .nav-center a {
+        padding: 6px 0;
+    }
+
+    /* Right buttons stacked and full width */
+    .nav-right {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    /* Adjust logo spacing */
+    .logo-text {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 992px) {
+  #serviceDetail {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-img {
+    height: 260px;
+  }
+  .service-title {
+    font-size: 1.7rem;
+  }
+  .price-box h2 {
+    font-size: 1.5rem;
+  }
+  .btn-book {
+    width: 100%;
+  }
+}
+

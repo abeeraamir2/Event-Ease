@@ -1,0 +1,585 @@
+:root {
+  --teal: #008080;
+  --teal-dark: #006666;
+  --ink:  #0b3a66;
+  --gray-light: #f8f9fa;
+  --border: #e0e0e0;
+}
+
+/* Logo */
+.logo { 
+  color: var(--teal) !important; 
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--teal);
+  border-color: var(--teal);
+}
+.btn-primary:hover {
+  background-color: var(--teal-dark) !important;
+  border-color: var(--teal-dark) !important;
+}
+
+/*Logo*/
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+/* Navigation links */
+/* =========================
+   Navbar (No Hamburger)
+========================= */
+
+.nav {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: #6c757d;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(55, 185, 172, 0.12);
+  color: var(--teal);
+}
+
+/* Buttons stay neat */
+header .btn {
+  white-space: nowrap;
+}
+
+/* ===== Mobile & Tablet ===== */
+@media (max-width: 992px) {
+  header nav > div {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .logo-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  header .btn {
+    width: 100%;
+  }
+
+  header .d-flex.gap-2 {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ===== Very Small Screens ===== */
+@media (max-width: 576px) {
+  .nav-link {
+    font-size: 0.95rem;
+  }
+
+  header .btn {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* Cards */
+.card {
+  border-radius: 16px !important;
+  transition: transform 0.2s;
+}
+.card:hover { 
+  transform: translateY(-4px); 
+}
+
+/* Table styling */
+.table th {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+.badge { 
+  padding: 6px 12px; 
+  font-size: 0.8rem; 
+}
+
+/* Form switch */
+.form-check-input:checked {
+  background-color: var(--teal);
+  border-color: var(--teal);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--teal);
+  border-color: var(--teal);
+}
+.btn-primary:hover {
+  background-color: var(--teal-dark) !important;
+  border-color: var(--teal-dark) !important;
+}
+
+/* ========== POPUP OVERLAY (FIXED) ========== */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+  backdrop-filter: blur(5px); /* Blur effect */
+  -webkit-backdrop-filter: blur(5px); /* Safari support */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeInOverlay 0.3s ease;
+}
+
+/* Popup box */
+.popup-box {
+  background: #fff;
+  padding: 30px;
+  width: 90%;
+  max-width: 550px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 16px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease;
+  position: relative;
+}
+
+/* Hide */
+.d-none { 
+  display: none !important; 
+}
+
+/* Animations */
+@keyframes fadeInOverlay {
+  from { 
+    opacity: 0;
+  }
+  to { 
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from { 
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ========== FORM STYLING ========== */
+
+/* Form labels */
+#serviceForm label {
+  display: block;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+/* Text inputs, selects, textareas */
+#serviceForm input[type="text"],
+#serviceForm input[type="number"],
+#serviceForm select,
+#serviceForm textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+/* Focus state */
+#serviceForm input[type="text"]:focus,
+#serviceForm input[type="number"]:focus,
+#serviceForm select:focus,
+#serviceForm textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.1);
+}
+
+/* Textarea specific */
+#serviceForm textarea {
+  min-height: 80px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Checkboxes */
+#serviceForm input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  cursor: pointer;
+  accent-color: var(--teal);
+}
+
+/* Checkbox labels */
+#serviceForm label:has(input[type="checkbox"]) {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  margin-right: 15px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+/* Submit button */
+#serviceForm button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--teal);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 20px;
+}
+
+#serviceForm button[type="submit"]:hover {
+  background-color: var(--teal-dark);
+}
+
+/* Category-specific field containers */
+.category-fields {
+  background-color: var(--gray-light);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 1px solid var(--border);
+  display: none; /* Hidden by default */
+}
+
+/* Category section headers */
+.category-fields h5 {
+  font-size: 1rem;
+  color: var(--teal);
+  margin-bottom: 15px;
+  margin-top: 0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Remove top margin from first label in category section */
+.category-fields label:first-of-type {
+  margin-top: 0;
+}
+
+/* Placeholder styling */
+#serviceForm input::placeholder,
+#serviceForm textarea::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Disabled state */
+#serviceForm input:disabled,
+#serviceForm select:disabled,
+#serviceForm textarea:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Close button styling */
+#closePopup {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+#closePopup:hover {
+  transform: rotate(90deg);
+}
+
+/* Popup header */
+.popup-box h4 {
+  color: var(--ink);
+  margin: 0;
+}
+
+/* Scrollbar styling for popup */
+.popup-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.popup-box::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.popup-box::-webkit-scrollbar-thumb {
+  background: var(--teal);
+  border-radius: 10px;
+}
+
+.popup-box::-webkit-scrollbar-thumb:hover {
+  background: var(--teal-dark);
+}
+
+/* Checkbox group container */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* Number input arrows */
+#serviceForm input[type="number"]::-webkit-inner-spin-button,
+#serviceForm input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+/* Navigation links */
+nav a {
+  color: #6c757d;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 500;
+}
+
+nav a:hover {
+  background-color: rgba(0, 128, 128, 0.1);
+  color: var(--teal);
+}
+
+/* Add spacing above sections */
+#servicesSection, 
+#bookingsSection {
+  margin-top: 40px;
+}
+
+#servicesSection h3, 
+#bookingsSection h3 {
+  margin-bottom: 25px;
+}
+
+/* Status badges */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-active {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-inactive {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .popup-box {
+    width: 95%;
+    padding: 20px;
+    max-height: 90vh;
+  }
+  
+  #serviceForm input[type="text"],
+  #serviceForm input[type="number"],
+  #serviceForm select,
+  #serviceForm textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  nav .d-flex.gap-3 {
+    gap: 0.5rem !important;
+  }
+  
+  nav a {
+    padding: 4px 8px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .popup-box {
+    padding: 15px;
+  }
+  
+  .popup-box h4 {
+    font-size: 1.2rem;
+  }
+  
+  #closePopup {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ========== BOOKING DETAILS STYLING ========== */
+
+.booking-details-container {
+  padding: 10px 0;
+}
+
+.info-section {
+  background-color: var(--gray-light);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.section-title {
+  color: var(--teal);
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.info-label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 0.95rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.details-text {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  color: var(--ink);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.category-details-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.detail-item {
+  background-color: var(--gray-light);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.detail-label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.detail-value {
+  font-size: 0.9rem;
+  color: var(--ink);
+  font-weight: 600;
+  display: block;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.action-buttons .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.action-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive for booking details */
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-section {
+    padding: 15px;
+  }
+}

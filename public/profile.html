@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Profile | EventEase</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel = "stylesheet" href="profile.css">
+</head>
+
+<body class="bg-light">
+  <header class="bg-white shadow-sm border-bottom">
+        <nav class="container-fluid px-4 py-3 d-flex align-items-center justify-content-between">
+            <!-- Logo -->
+            <h3 class="logo-text mb-2">EventEase</h3>
+
+            <div class="d-flex flex-grow-1 justify-content-center gap-3">
+                <a class="nav-link text-muted" href="home.html">Home</a>
+                <a class="nav-link text-muted" href="services.html">Services</a>
+            </div>
+
+            <div class="d-flex align-items-center gap-2">
+                <button id="profileBtn" class="btn btn-primary btn-sm profile">
+                  View Profile
+                </button>
+                <button id="signinBtn" class="btn btn-primary btn-sm signup">Login</button>
+                <button id="logoutBtn" class="btn btn-danger btn-sm signout">Logout</button>
+            </div>
+
+        </nav>
+    </header>
+
+<div class="container py-5">
+
+  <h2 class="mb-4 fw-bold">My Profile</h2>
+
+  <!-- PROFILE CARD -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <h5 class="fw-bold mb-3">Personal Details</h5>
+      <p><strong>Name:</strong> <span id="name">Loading...</span></p>
+      <p><strong>Email:</strong> <span id="email">Loading...</span></p>
+      <p><strong>Contact:</strong> <span id="contact">Loading...</span></p>
+      <p><strong>City:</strong> <span id="city">Loading...</span></p>
+
+      <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editModal">
+        Edit Profile
+      </button>
+    </div>
+  </div>
+
+  <!-- BOOKINGS -->
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h5 class="fw-bold mb-3">My Bookings</h5>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="bookingTable">
+          <tr>
+            <td colspan="4" class="text-center">Loading...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- EDIT MODAL -->
+<div class="modal fade" id="editModal" tabindex="-1">
+  <div class="modal-dialog">
+    <form id="editForm" class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input id="editName" class="form-control mb-2" placeholder="Name" required>
+        <input id="editEmail" type="email" class="form-control mb-2" placeholder="Email" required>
+        <input id="editContact" class="form-control mb-2" placeholder="Contact">
+        <input id="editCity" class="form-control mb-2" placeholder="City">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button class="btn btn-primary" type="submit">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Footer -->
+    <footer class="site-footer py-5">
+      <div class="container">
+        <div class="content-inner mx-auto">
+          <div class="row">
+            <div class="col-12 col-md-6 mb-4 mb-md-0">
+              <h5 class="fw-bold mb-3">Quick Links</h5>
+              <ul class="list-unstyled footer-links mb-0">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-6">
+              <h5 class="fw-bold mb-3">Contact Info</h5>
+              <ul class="list-unstyled contact-list mb-0">
+                <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> Lahore, Pakistan</li>
+                <li class="mb-2"><i class="bi bi-telephone me-2"></i> 0300 4861280</li>
+                <li><i class="bi bi-envelope me-2"></i> eventease@gmail.com</li>
+              </ul>
+            </div>
+          </div>
+          <hr class="my-4">
+          <div class="text-center small text-muted">
+            © 2025 EventEase. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Your JS -->
+<script src="profile.js"></script>
+</body>
+</html>

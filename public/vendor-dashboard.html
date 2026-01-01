@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Dashboard - EventEase</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor-dashboard.css">
+</head>
+<body class="bg-light">
+
+    <!-- Top Navbar -->
+  <header class="bg-white shadow-sm border-bottom">
+    <nav class="container-fluid px-4 py-3 d-flex align-items-center justify-content-between">
+      
+      <!-- Logo -->
+      <h3 class="logo-text mb-2">EventEase</h3>
+      
+      <!-- Centered Nav Links -->
+      <div class="d-flex flex-grow-1 justify-content-center gap-3">
+        <a href="vendor-dashboard.html">Dashboard</a>
+        <a href="vendor-services.html">Services</a>
+        <a href="vendor-booking.html">Bookings</a>
+      </div>
+      
+      <!-- Action Buttons -->
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-primary rounded-pill px-4" id="openPopup">
+          <i class="bi bi-plus-circle"></i> Add New Service
+        </button>
+        <button class="btn btn-danger" id="logoutBtn">Logout</button>
+      </div>
+      
+    </nav>
+  </header>
+
+  <main class="container py-5">
+    <!-- Stats Cards -->
+    <div class="row mb-5">
+      <div class="col-md-4 mb-3">
+        <div class="card shadow-sm text-center p-4">
+          <h6 class="text-muted">Total Services</h6>
+          <h2 id="totalServices" class="mb-0">0</h2>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card shadow-sm text-center p-4">
+          <h6 class="text-muted">Active Services</h6>
+          <h2 id="activeServices" class="mb-0 text-success">0</h2>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card shadow-sm text-center p-4">
+          <h6 class="text-muted">Inactive Services</h6>
+          <h2 id="inactiveServices" class="mb-0 text-danger">0</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Table -->
+    <div id="servicesSection">
+      <h3 class="mb-4">Your Services</h3>
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table id="servicesTable" class="table table-hover align-middle mb-0">
+              <thead class="bg-light">
+                <tr>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Location</th>
+                  <th>Price Range</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="6" class="text-center text-muted py-4">No services added yet</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="bookingsSection">
+      <h3 class="mb-4">Recent Bookings</h3>
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table id="bookingsTableBody" class="table table-hover align-middle mb-0">
+              <thead class="bg-light">
+                <tr>
+                  <th>Customer Name</th>
+                  <th>Service Booked</th>
+                  <th>Event Date</th>
+                  <th>Event Time</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="bookingsTable">
+                <tr>
+                  <td colspan="6" class="text-center text-muted py-4">No bookings yet</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FIXED: Popup with Overlay Structure -->
+  <div id="addServicePopup" class="popup-overlay d-none">
+    <div class="popup-box">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="fw-bold">Add New Service</h4>
+        <button id="closePopup" class="btn btn-outline-danger btn-sm">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <form id="serviceForm">
+        <!-- Common Fields -->
+        <label>Service Name *
+          <input type="text" id="name" name="name" placeholder="e.g., Grand Ballroom" required>
+        </label>
+        
+        <label>Category *
+          <select id="category" name="category" required>
+            <option value="">Select Category</option>
+            <option value="venue">Venue</option>
+            <option value="catering">Catering</option>
+            <option value="decor">Decor</option>
+            <option value="photographer">Photographer</option>
+          </select>
+        </label>
+        
+        <label>Location *
+          <input type="text" id="location" name="location" placeholder="e.g., DHA, Lahore" required>
+        </label>
+        
+        <label>Description
+          <textarea id="description" name="description" placeholder="Describe your service..."></textarea>
+        </label>
+
+        <!-- VENUE FIELDS -->
+        <div id="venueFields" class="category-fields">
+          <h5><i class="bi bi-building"></i> Venue Details</h5>
+          
+          <label>Venue Type
+            <select id="venueType">
+              <option value="Indoor">Indoor</option>
+              <option value="Outdoor">Outdoor</option>
+              <option value="Both">Both Indoor & Outdoor</option>
+            </select>
+          </label>
+          
+          <label>Capacity (Number of Guests)
+            <input type="number" id="venueCapacity" min="1" placeholder="e.g., 500">
+          </label>
+          
+          <label>Price per Head (Rs.)
+            <input type="number" id="pricePerHead" min="0" placeholder="e.g., 2000">
+          </label>
+          
+          <label>Amenities Available
+            <div class="checkbox-group">
+              <label><input type="checkbox" value="Parking" class="venueAmenity"> Parking</label>
+              <label><input type="checkbox" value="Air Conditioning" class="venueAmenity"> AC</label>
+              <label><input type="checkbox" value="Stage" class="venueAmenity"> Stage</label>
+              <label><input type="checkbox" value="Sound System" class="venueAmenity"> Sound System</label>
+              <label><input type="checkbox" value="Lighting" class="venueAmenity"> Lighting</label>
+              <label><input type="checkbox" value="Generator" class="venueAmenity"> Generator Backup</label>
+            </div>
+          </label>
+        </div>
+
+        <!-- CATERING FIELDS -->
+        <div id="cateringFields" class="category-fields">
+          <h5><i class="bi bi-cup-straw"></i> Catering Details</h5>
+          
+          <label>Cuisine Type
+            <select id="cuisineType">
+              <option value="Desi">Desi/Pakistani</option>
+              <option value="Chinese">Chinese</option>
+              <option value="Continental">Continental</option>
+              <option value="BBQ">BBQ</option>
+              <option value="Mixed">Mixed</option>
+            </select>
+          </label>
+          
+          <label>Minimum Guests
+            <input type="number" id="minGuests" min="1" placeholder="e.g., 50">
+          </label>
+          
+          <label>Maximum Guests
+            <input type="number" id="maxGuests" min="1" placeholder="e.g., 500">
+          </label>
+          
+          <label>Menu - Starters
+            <textarea id="starters" placeholder="e.g., Spring Rolls, Samosas, Chicken Wings"></textarea>
+          </label>
+          
+          <label>Menu - Main Course
+            <textarea id="mainCourse" placeholder="e.g., Biryani, Karahi, BBQ, Pulao"></textarea>
+          </label>
+          
+          <label>Menu - Desserts
+            <textarea id="desserts" placeholder="e.g., Gulab Jamun, Kheer, Ice Cream"></textarea>
+          </label>
+          
+          <label>Price per Person (Rs.)
+            <input type="number" id="pricePerPerson" min="0" placeholder="e.g., 1500">
+          </label>
+          
+          <label>Package Price (Rs.)
+            <input type="number" id="packagePrice" min="0" placeholder="Total package price (optional)">
+          </label>
+          
+          <label>Service Includes
+            <div class="checkbox-group">
+              <label><input type="checkbox" value="Waiter Service" class="cateringService"> Waiter Service</label>
+              <label><input type="checkbox" value="Crockery" class="cateringService"> Crockery</label>
+              <label><input type="checkbox" value="Furniture" class="cateringService"> Furniture</label>
+              <label><input type="checkbox" value="Beverages" class="cateringService"> Beverages</label>
+            </div>
+          </label>
+        </div>
+
+        <!-- DECOR FIELDS -->
+        <div id="decorFields" class="category-fields">
+          <h5><i class="bi bi-palette"></i> Decor Details</h5>
+          
+          <label>Decor Style
+            <input type="text" id="decorStyle" placeholder="e.g., Modern, Traditional, Floral">
+          </label>
+          
+          <label>Event Types Covered
+            <div class="checkbox-group">
+              <label><input type="checkbox" value="Wedding" class="decorEvent"> Wedding</label>
+              <label><input type="checkbox" value="Birthday" class="decorEvent"> Birthday</label>
+              <label><input type="checkbox" value="Corporate" class="decorEvent"> Corporate</label>
+              <label><input type="checkbox" value="Engagement" class="decorEvent"> Engagement</label>
+            </div>
+          </label>
+          
+          <label>Minimum Price (Rs.)
+            <input type="number" id="decorMinPrice" min="0" placeholder="Starting from">
+          </label>
+          
+          <label>Maximum Price (Rs.)
+            <input type="number" id="decorMaxPrice" min="0" placeholder="Up to">
+          </label>
+          
+          <label>What's Included
+            <textarea id="decorIncludes" placeholder="e.g., Stage setup, Floral arrangements, Lighting, Backdrop"></textarea>
+          </label>
+        </div>
+
+        <!-- PHOTOGRAPHER FIELDS -->
+        <div id="photographerFields" class="category-fields">
+          <h5><i class="bi bi-camera"></i> Photography Details</h5>
+          
+          <label>Experience (Years)
+            <input type="number" id="experience" min="0" placeholder="e.g., 5">
+          </label>
+          
+          <label>Deliverables
+            <select id="deliverables">
+              <option value="Soft Copy Only">Soft Copy Only</option>
+              <option value="1 Album">1 Album + Soft Copy</option>
+              <option value="2 Albums">2 Albums + Soft Copy</option>
+              <option value="Custom">Custom Package</option>
+            </select>
+          </label>
+          
+          <label>Photography Services
+            <div class="checkbox-group">
+              <label><input type="checkbox" value="Pre-Wedding Shoot" class="photoService"> Pre-Wedding Shoot</label>
+              <label><input type="checkbox" value="Event Coverage" class="photoService"> Event Coverage</label>
+              <label><input type="checkbox" value="Family Portraits" class="photoService"> Family Portraits</label>
+              <label><input type="checkbox" value="Couple Shoot" class="photoService"> Couple Shoot</label>
+            </div>
+          </label>
+          
+          <label>Team Size
+            <div class="checkbox-group">
+              <label><input type="checkbox" value="1 Photographer" class="photoTeam"> 1 Photographer</label>
+              <label><input type="checkbox" value="2 Photographers" class="photoTeam"> 2 Photographers</label>
+              <label><input type="checkbox" value="1 Videographer" class="photoTeam"> 1 Videographer</label>
+              <label><input type="checkbox" value="Drone Coverage" class="photoTeam"> Drone Coverage</label>
+            </div>
+          </label>
+          
+          <label>Videography Options
+            <div class="checkbox-group">
+              <label><input type="checkbox" value="Highlights" class="videoOption"> Highlights (3-5 min)</label>
+              <label><input type="checkbox" value="Full Video" class="videoOption"> Full Video</label>
+              <label><input type="checkbox" value="Cinematic" class="videoOption"> Cinematic</label>
+              <label><input type="checkbox" value="Traditional" class="videoOption"> Traditional</label>
+            </div>
+          </label>
+          
+          <label>Package Price (Rs.)
+            <input type="number" id="photographerPrice" min="0" placeholder="Total package price">
+          </label>
+        </div>
+
+        <button type="submit">Add Service</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor-dashboard.js"></script>
+</body>
+</html>

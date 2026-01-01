@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventEase - Services</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="services.css">
+</head>
+
+<body class = "bg-light">
+  <header class="bg-white shadow-sm border-bottom">
+        <nav class="container-fluid px-4 py-3 d-flex align-items-center justify-content-between">
+            <!-- Logo -->
+            <h3 class="logo-text mb-2">EventEase</h3>
+
+            <div class="d-flex flex-grow-1 justify-content-center gap-3">
+                <a class="nav-link text-muted" href="home.html">Home</a>
+                <a class="nav-link text-muted" href="services.html">Services</a>
+            </div>
+
+            <div class="d-flex align-items-center gap-2">
+                <button id="signinBtn" class="btn btn-primary btn-sm signup">Login</button>
+                <button id="logoutBtn" class="btn btn-danger btn-sm signout">Logout</button>
+            </div>
+        </nav>
+    </header>
+  <!-- Main content wrapper -->
+  <main class="site-main">
+    <section class="popular-services py-5">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-2">Everything You Need For The Perfect Event</h2>
+        <p class="text-center mb-5">Explore our curated selection of top-tier vendors to bring your event to life.</p>
+
+        <div class="content-inner mx-auto">
+          <div class="row g-4 justify-content-center">
+            <!-- Venue Card -->
+            <div class="col-12 col-md-6">
+              <a href="vendors.html?category=venue" class="service-card">
+                <img src="/images/venue.webp" class="service-image" alt="Venue">
+                <div class="service-label">Venues</div>
+              </a>
+            </div>
+
+            <!-- Catering Card -->
+            <div class="col-12 col-md-6">
+              <a href="vendors.html?category=catering" class="service-card">
+                <img src="/images/catering.avif" class="service-image" alt="Catering">
+                <div class="service-label">Catering</div>
+              </a>
+            </div>
+
+            <!-- Decor Card -->
+            <div class="col-12 col-md-6">
+              <a href="vendors.html?category=decor" class="service-card">
+                <img src="/images/decor.jpg" class="service-image" alt="Decor">
+                <div class="service-label">Decor</div>
+              </a>
+            </div>
+
+            <!-- Photography Card -->
+            <div class="col-12 col-md-6">
+              <a href="vendors.html?category=photographer" class="service-card">
+                <img src="/images/photography.jpg" class="service-image" alt="Photography">
+                <div class="service-label">Photographers</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer py-5">
+    <div class="container">
+      <div class="content-inner mx-auto">
+        <div class="row">
+          <div class="col-12 col-md-6 mb-4 mb-md-0">
+            <h5 class="fw-bold mb-3">Quick Links</h5>
+            <ul class="list-unstyled footer-links mb-0">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <h5 class="fw-bold mb-3">Contact Info</h5>
+            <ul class="list-unstyled contact-list mb-0">
+              <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> Lahore, Pakistan</li>
+              <li class="mb-2"><i class="bi bi-telephone me-2"></i> 0300 4861280</li>
+              <li><i class="bi bi-envelope me-2"></i> eventease@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="text-center small text-muted">
+          © 2025 EventEase. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="services.js"></script>
+</body>
+</html>

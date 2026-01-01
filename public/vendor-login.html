@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Login - EventEase</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Your global colours (services.css) -->
+    <link rel="stylesheet" href="services.css">
+
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="vendor-login.css">
+</head>
+
+<body class="d-flex align-items-center justify-content-center">
+
+
+    <div class="login-container mx-auto text-center">
+        <a href="home.html" id="btnBackHome" class="btn btn-back-home position-absolute top-3 start-3">
+            Back to Home
+        </a>
+        <h1 class="logo-text mb-2">EventEase</h1>
+        <p class="text-muted mb-4">Welcome back, Vendor!</p>
+
+        <div class="card login-card">
+        <form>
+            <div class="mb-4 text-start">
+            <label class="form-label fw-semibold">Email Address</label>
+            <input type="email" class="form-control" placeholder="you@example.com" required>
+            </div>
+
+            <div class="mb-4 text-start">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <label class="form-label fw-semibold">Password</label>
+            </div>
+            <input type="password" class="form-control" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn btn-login w-100">Login</button>
+        </form>
+
+        <div class="mt-4">
+            <p class="text-muted mb-0">
+            New to EventEase?
+            <a href="vendor-signup.html" class="link-create">Create an account</a>
+            </p>
+        </div>
+        </div>
+    </div>
+
+</body>
+<script src = "vendor-login.js"></script>
+</html>

@@ -1,0 +1,112 @@
+/* General reset */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+}
+
+:root {
+  --teal: #008080;
+  --teal-dark: #006666;
+  --ink: #0b3a66;
+  --gray-light: #f8f9fa;
+  --border: #e0e0e0;
+}
+
+/* Logo */
+.logo { 
+  color: var(--teal) !important; 
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--teal);
+  border-color: var(--teal);
+}
+.btn-primary:hover {
+  background-color: var(--teal-dark) !important;
+  border-color: var(--teal-dark) !important;
+}
+
+/*Logo*/
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+/* Navigation links */
+nav a {
+  color: #6c757d;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 500;
+}
+.logo fw-bold fs-3 text-decoration-none a{
+    color:var(--ink);
+}
+nav a:hover {
+  background-color: rgba(0, 128, 128, 0.1);
+  color: var(--teal);
+}
+
+/* Add spacing above sections */
+#servicesSection, 
+#bookingsSection {
+  margin-top: 40px;
+}
+
+#servicesSection h3, 
+#bookingsSection h3 {
+  margin-bottom: 25px;
+}
+
+/* Booking Cards */
+#bookingList .card {
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  background-color: #fff;
+}
+#bookingList .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+#bookingList .card .card-title { font-size: 1.1rem; }
+#bookingList .card .card-text { font-size: 0.95rem; color: #555; }
+#bookingList .badge { font-size: 0.85rem; padding: 0.4em 0.6em; border-radius: 8px; }
+
+/* Category colors */
+.card.venue { border-left: 5px solid #0d6efd; }
+.card.catering { border-left: 5px solid #198754; }
+.card.decor { border-left: 5px solid #fd7e14; }
+.card.photography { border-left: 5px solid #6f42c1; }
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.5);
+  display:flex; justify-content:center; align-items:center;
+  padding:20px; overflow-y:auto; z-index:2000;
+}
+.popup-box {
+  background-color:#fff; border-radius:12px; width:100%; max-width:500px;
+  padding:25px; position:relative; box-shadow:0 8px 25px rgba(0,0,0,0.2);
+}
+.popup-box h4 { margin-bottom:15px; color:#0d6efd; }
+.popup-box p { margin-bottom:10px; color:#333; }
+#closePopup { position:absolute; top:15px; right:15px; border-radius:50%; }
+
+/* Status Badges */
+.bg-warning.text-dark { background-color: #ffc107 !important; color: #212529 !important; }
+.bg-success.text-white { background-color: #28a745 !important; color: #fff !important; }
+.bg-danger.text-white { background-color: #dc3545 !important; color: #fff !important; }
+.bg-secondary { background-color: #6c757d !important; color: #fff !important; }
+
+/* Responsive */
+@media(max-width:768px){
+  #bookingList .card { margin:0 auto; }
+  .popup-box { padding:20px; }
+}

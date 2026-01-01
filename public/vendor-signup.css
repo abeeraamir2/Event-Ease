@@ -1,0 +1,54 @@
+:root {
+  --light-bg: #f5f8fa;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--light-bg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.signup-container { max-width: 460px; }
+
+.signup-card {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(11,58,102,.1);
+  padding: 2.5rem;
+  border: none;
+}
+
+.form-control {
+  border-radius: 12px;
+  padding: .9rem 1rem;
+  border: 1.5px solid #e2e8f0;
+}
+.form-control:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px rgba(55,185,172,.15);
+}
+
+/* Teal Button */
+.btn-signup {
+  background: var(--teal);
+  border: none;
+  border-radius: 50px;
+  padding: .9rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+.btn-signup:hover {
+  background: var(--teal-dark);
+  transform: translateY(-2px);
+}
+
+/* Teal Link */
+.link-login {
+  color: var(--teal);
+  font-weight: 600;
+  text-decoration: none;
+}
+.link-login:hover {
+  color: var(--teal-dark);
+}
