@@ -9,12 +9,9 @@ const bookingRoutes = require('./routes/bookingRoutes');
 const userRoutes = require('./routes/userRoutes');
 const searchRoutes = require('./routes/searchRoutes');
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "home.html"));
-});
-
 const app = express();
 const PORT = process.env.PORT || 5000;
+
 
 // MIDDLEWARE
 app.use(cors());
@@ -29,6 +26,10 @@ app.use('/api/services', servicesRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/user',userRoutes);
 app.use('/api/search',searchRoutes);
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "home.html"));
+});
 
 console.log("RAW MONGO_URI VALUE >>>", process.env.MONGO_URI);
 // MONGODB CONNECTION
