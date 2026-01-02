@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function loadServices() {
     try {
         const res = await fetch(
-            `http://localhost:5000/api/services/vendor/${vendorId}`,
+            `/api/services/vendor/${vendorId}`,
             {
                 headers: {
                     Authorization: `Bearer ${vendorToken}`
@@ -247,11 +247,11 @@ serviceForm.addEventListener("submit", async e => {
     };
 
     try {
-        let url = "http://localhost:5000/api/services/add";
+        let url = "/api/services/add";
         let method = "POST";
 
         if (editId) {
-            url = `http://localhost:5000/api/services/${editId}`;
+            url = `/api/services/${editId}`;
             method = "PUT";
         } else {
             serviceData.status = "active";
@@ -358,7 +358,7 @@ tableBody.addEventListener("click", async e => {
 
         try {
             const res = await fetch(
-                `http://localhost:5000/api/services/${serviceId}/status`,
+                `/api/services/${serviceId}/status`,
                 {
                     method: "PUT",
                     headers: {
@@ -391,7 +391,7 @@ tableBody.addEventListener("click", async e => {
 
         try {
             const res = await fetch(
-                `http://localhost:5000/api/services/${serviceId}`,
+                `/api/services/${serviceId}`,
                 {
                     method: "DELETE",
                     headers: {
@@ -421,7 +421,7 @@ async function loadBookings() {
         console.log('📋 Loading bookings for vendor:', vendorId);
         console.log('🔑 Using token:', vendorToken.substring(0, 20) + '...');
 
-        const res = await fetch(`http://localhost:5000/api/bookings/vendor/${vendorId}`, {
+        const res = await fetch(`/api/bookings/vendor/${vendorId}`, {
             headers: {
                 'Authorization': `Bearer ${vendorToken}`, // ← IMPORTANT: Include token
                 'Content-Type': 'application/json'
@@ -499,7 +499,7 @@ async function loadBookingDetails(bookingId) {
     try {
         console.log('🔍 Loading booking details:', bookingId);
 
-        const res = await fetch(`http://localhost:5000/api/bookings/${bookingId}`, {
+        const res = await fetch(`/api/bookings/${bookingId}`, {
             headers: {
                 'Authorization': `Bearer ${vendorToken}`, // ← Include token
                 'Content-Type': 'application/json'
@@ -615,7 +615,7 @@ async function updateBookingStatus(bookingId, newStatus) {
     try {
         console.log('🔄 Updating booking status:', { bookingId, newStatus });
 
-        const res = await fetch(`http://localhost:5000/api/bookings/${bookingId}/status`, {
+        const res = await fetch(`/api/bookings/${bookingId}/status`, {
             method: "PUT",
             headers: {
                 'Authorization': `Bearer ${vendorToken}`, // ← Include token

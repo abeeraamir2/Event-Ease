@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', loadServices);
 
 async function loadServices() {
     try {
-        let url = 'http://localhost:5000/api/services';
+        let url = '/api/services';
 
         console.log('Fetching services from:', url);
         console.log('Filters:', { category: categoryFromUrl, area: areaFromUrl, guests: guestsFromUrl });

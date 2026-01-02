@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // ================= LOAD BOOKINGS =================
 async function loadBookings(vendorId, token) {
     try {
-        const res = await fetch(`http://localhost:5000/api/bookings/vendor/${vendorId}`, {
+        const res = await fetch(`/api/bookings/vendor/${vendorId}`, {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -108,7 +108,7 @@ async function updateStatus(id, status) {
     if (!confirm(`Are you sure you want to ${status.toLowerCase()} this booking?`)) return;
 
     try {
-        const res = await fetch(`http://localhost:5000/api/bookings/update-status/${id}`, {
+        const res = await fetch(`/api/bookings/update-status/${id}`, {
             method: "PUT",
             headers: {
                 "Authorization": `Bearer ${vendorToken}`,
@@ -141,7 +141,7 @@ async function openBookingDetail(id) {
     const content = popup.querySelector(".popup-content");
 
     try {
-        const res = await fetch(`http://localhost:5000/api/bookings/${id}`, {
+        const res = await fetch(`/api/bookings/${id}`, {
             headers: {
                 'Authorization': `Bearer ${vendorToken}`,
                 'Content-Type': 'application/json'
