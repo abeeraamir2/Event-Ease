@@ -9,31 +9,39 @@
   <link rel="stylesheet" href="vendor-dashboard.css">
 </head>
 <body class="bg-light">
-
-    <!-- Top Navbar -->
   <header class="bg-white shadow-sm border-bottom">
-    <nav class="container-fluid px-4 py-3 d-flex align-items-center justify-content-between">
-      
+  <nav class="container-fluid px-4 py-3">
+    
+    <div class="row align-items-center g-3">
+
       <!-- Logo -->
-      <h3 class="logo-text mb-2">EventEase</h3>
-      
-      <!-- Centered Nav Links -->
-      <div class="d-flex flex-grow-1 justify-content-center gap-3">
-        <a href="vendor-dashboard.html">Dashboard</a>
-        <a href="vendor-services.html">Services</a>
-        <a href="vendor-booking.html">Bookings</a>
+      <div class="col-lg-3 col-12 text-lg-start text-center">
+        <h3 class="logo-text mb-0">EventEase</h3>
       </div>
-      
-      <!-- Action Buttons -->
-      <div class="d-flex align-items-center gap-2">
-        <button class="btn btn-primary rounded-pill px-4" id="openPopup">
-          <i class="bi bi-plus-circle"></i> Add New Service
-        </button>
-        <button class="btn btn-danger" id="logoutBtn">Logout</button>
+
+      <!-- Nav Links -->
+      <div class="col-lg-6 col-12">
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="vendor-dashboard.html">Dashboard</a>
+          <a href="vendor-services.html">Services</a>
+          <a href="vendor-booking.html">Bookings</a>
+        </div>
       </div>
-      
-    </nav>
-  </header>
+
+      <!-- Buttons -->
+      <div class="col-lg-3 col-12">
+        <div class="d-flex justify-content-center justify-content-lg-end gap-2 flex-wrap">
+          <button class="btn btn-primary rounded-pill px-4" id="openPopup">
+            <i class="bi bi-plus-circle"></i> Add New Service
+          </button>
+          <button class="btn btn-danger" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+    </div>
+
+  </nav>
+</header>
 
   <main class="container py-5">
     <!-- Stats Cards -->
