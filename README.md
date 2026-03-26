@@ -1,33 +1,63 @@
-#EventEase - Event Planning Platform 
-##Overview
-EventEase is a web-based event planning platform designed to simplify the process of organizing events. It enables users to easily discover and book event services such as venues, catering, photography, and décor all in one place.The platform also provides a dedicated interface for vendors, allowing them to efficiently manage their services. Vendors can add, edit, deactivate, and delete service listings, as well as handle customer bookings by viewing requests and choosing to accept or reject them.
-EventEase aims to create a seamless connection between customers and service providers, making event planning more convenient.
-##Tech Stack
-| Category         | Technology              |
-| ---------------- | ----------------------- |
-| Frontend         | HTML, CSS, JavaScript |
-| Backend          | Node.js, Express.js     |
-| Database         | MongoDB                 |
-| API Testing      | Postman                 |
-| Version Control  | Git, GitHub             |
-| Development Tool | VS Code                 |
+# EventEase - Event Planning Platform
 
-##Features
-###User Features
-*Browse event services (venues, catering, photography, décor)
-*Search and explore different service categories
-*View detailed information for each service
-*Book services بسهولة
-*Track booking status
-###Vendor Features
-*Add new services
-*Edit existing services
-*Deactivate or delete services
-*View all customer bookings
-*Accept or reject booking requests
-###Platform Features
-*Full-stack web application
-*RESTful API using Express.js
-*Database integration with MongoDB
-Smooth user and vendor interaction
-Scalable and modular structure
+## Overview
+
+EventEase is a web-based event planning platform designed to simplify the process of organizing events. It enables users to easily discover and book event services such as venues, catering, photography, and décor all in one place.
+
+The platform also provides a dedicated interface for vendors, allowing them to efficiently manage their services. Vendors can add, edit, deactivate, and delete service listings, as well as handle customer bookings by viewing requests and choosing to accept or reject them.
+
+EventEase aims to create a seamless connection between customers and service providers, making event planning more convenient.
+
+---
+
+## Tech Stack
+
+| Category          | Technology                     |
+|------------------|------------------------------|
+| Frontend         | HTML, CSS, JavaScript        |
+| Backend          | Node.js, Express.js          |
+| Database         | MongoDB                      |
+| API Testing      | Postman                      |
+| Version Control  | Git, GitHub                  |
+| Development Tool | VS Code                      |
+
+---
+
+## Features
+
+### User Features
+- **Browse event services** (venues, catering, photography, décor)  
+- **Search and explore** different service categories  
+- **View detailed information** for each service  
+- **Book services** 
+- **Track booking status**
+
+### Vendor Features
+- **Add new services**  
+- **Edit existing services**  
+- **Deactivate or delete services**  
+- **View all customer bookings**  
+- **Accept or reject booking requests**
+
+### Platform Features
+- **Full-stack web application**  
+- **RESTful API using Express.js**  
+- **Database integration with MongoDB**  
+- **Smooth user and vendor interaction**  
+- **Scalable and modular structure**
+
+### Clone the Repository
+git clone https://github.com/abeeraamir2/EventEase.git
+cd EventEase
+### Install Dependencies
+Make sure you have Node.js installed, then run:
+npm install
+### Setup Environment Variables
+Create a .env file in the root directory and add:
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+### Run the Server
+npm start
+### Open in Browser
+Go to:
+http://localhost:5000
