@@ -12,6 +12,7 @@ Tech Stack
 | API Testing      | Postman                 |
 | Version Control  | Git, GitHub             |
 | Development Tool | VS Code                 |
+
 Features
 User Features
 Browse event services (venues, catering, photography, décor)
